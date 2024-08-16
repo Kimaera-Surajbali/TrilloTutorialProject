@@ -34,13 +34,11 @@ header{
 
 .hotel-view{
     background-color: #fff;
-    height: 80rem;
 
     flex: 1;
 }
 
-.detail {
-    font-size: 1.4rem;
+.detail {   
     display: flex;
     padding: 4.5rem;
     background-color: var(--color-grey-light-1);
@@ -48,6 +46,7 @@ header{
 }
 
 .description {
+    font-size: 1.4rem;
     background-color: #fff;
     box-shadow: var(--shadow-light);
     padding: 3rem;
