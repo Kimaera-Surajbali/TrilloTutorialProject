@@ -7,18 +7,21 @@
     "watch:sass": "sass --watch sass/main.scss:css/style.css",
     "devserver": "live-server",
     "start": "npm-run-all --parallel devserver watch:sass",
-    "compile:sass": "node-sass sass/main.scss css/style.comp.css",
-    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.comp.css -o css/style.prefix.css",
-    "compress:css": "node-sass css/style.prefix.css css/style.css --output-style compressed",
+    "compile:sass": "sass sass/main.scss css/style.comp.css",
+    "prefix:css": "postcss css/style.comp.css --use autoprefixer -b 'last 10 versions' -o css/style.prefix.css",
+    "compress:css": "sass css/style.prefix.css css/style.min.css",
     "build:css": "npm-run-all compile:sass prefix:css compress:css"
   },
   "author": "Jonas",
   "license": "ISC",
   "devDependencies": {
-    "autoprefixer": "^7.1.4",
+    "autoprefixer": "^10.4.20",
     "concat": "^1.0.3",
     "npm-run-all": "^4.1.1",
-    "postcss-cli": "^4.1.1",
+    "postcss-cli": "^11.0.0",
     "sass": "^1.77.8"
+  },
+  "dependencies": {
+    "globby": "^14.0.2"
   }
 }
